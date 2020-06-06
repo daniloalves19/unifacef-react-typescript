@@ -9,20 +9,20 @@ export default class CombustivelStore{
 
         const {etanol, gasolina} = this;
 
-        if ((!isNaN(Number(etanol))) && (!isNaN(Number(gasolina)))) {
+        if (!isNaN(Number(etanol)) && !isNaN((Number(gasolina)))) {            
 
-            const value = Number(etanol)/ Number (gasolina);
+            const value = Number(etanol) / Number (gasolina);
 
-            if (value >0.70){
-                swal.fire('Vale a pena Gasolina','','success');
-            } if (value <0.70){
-                swal.fire('Vale a pena Etanol','','success');
+            if (value > 0.70){
+                swal.fire('Vale a pena Gasolina.','','success');
+            } else if (value < 0.70){
+                swal.fire('Vale a pena Etanol.','','success');
             } else {
-                swal.fire('São equivalentes','','info');
+                swal.fire('São equivalentes.','','info');
             }
 
         } else {
-            swal.fire('Preencha valores válidos','','warning');
+            swal.fire('Preencha valores válidos!','','warning');
         }
     }
 

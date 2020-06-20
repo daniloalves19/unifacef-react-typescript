@@ -29,7 +29,9 @@ export default class CacheStore {
   }
 
   @action loadForm = () => {
-    this.cookie = this.getCookie('unifacef')
+    this.cookie = this.getCookie('unifacef');
+    this.session = sessionStorage.getItem('unifacef-session');
+    this.local = localStorage.getItem('unifacef-local');
   }
 
   @action submit = () => {

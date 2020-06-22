@@ -57,7 +57,7 @@ export default class TagsStore {
   @action stopStream = () => {
     try {
       const mediaControl = document.querySelector('video#webcam') as any;
-      mediaControl.src = '';
+      mediaControl.srcObject = null;
     } catch (error) {
       swal.fire(error.message, '', 'error');
     }

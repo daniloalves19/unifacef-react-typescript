@@ -8,9 +8,9 @@ import NewRouterStore from '../../mobx/router.store';
 
 import CoronaStore from './store';
 import Summary from '../../components/summary';
+import Country from '../../components/country';
 
-//import Cep from '../../components/cep';
-//import Github from '../../components/github';
+
 
 interface Props {
     router: NewRouterStore;
@@ -29,7 +29,7 @@ export default class Corona extends React.Component<Props>{
 
     render(){
 
-        const {summary, countryCode, handleForm, countriesOptions} = this.props.corona;
+        const {summary, countryCode, countriesFiltered, handleForm, countriesOptions} = this.props.corona;
 
         return(
             <Container>
@@ -69,7 +69,14 @@ export default class Corona extends React.Component<Props>{
                                 </Form.Field>
                             </Form.Group>
                         </Form>
-                    </Grid.Row>                    
+                    </Grid.Row>
+
+                    <Grid.Row>
+                        <Card.Group itemsPerRow={countryCode ? 1 : 3}>
+                            {countriesFiltered?.map((country, indexCountry) => <Country key={indexCountry} country={country} />)}
+                        </Card.Group>
+                    </Grid.Row> 
+
                 </Grid>
             </Container>
         )

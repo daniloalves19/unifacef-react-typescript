@@ -18,6 +18,7 @@ import { router } from './mobx';
 import * as store from './mobx';
 
 import './plugins/sentry.plugin';
+import './plugins/onde-signal.plugin';
 import './apis/axios.api';
 
 const rootElement = document.getElementById('root');

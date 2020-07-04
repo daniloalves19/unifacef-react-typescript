@@ -1,7 +1,8 @@
 
 //para fazer requisições em API, consumindo outro serviço
 import axios from 'axios';
+import { configs } from '../configs';
 
 export const getPrice = () => {
-  return axios.request({ url: 'https://economia.awesomeapi.com.br/json/all' });
+  return axios.request({ url: configs.apis.economia});
 }

@@ -4,7 +4,7 @@ import {Container, Grid, Header, Form } from 'semantic-ui-react';
 
 import {inject, observer} from 'mobx-react';
 
-import NewrRouterStore from '../../mobx/router.store';
+import NewRouterStore from '../../mobx/router.store';
 
 import RegisterStore from './store';
 
@@ -12,7 +12,7 @@ import Cep from '../../components/cep';
 import Github from '../../components/github';
 
 interface Props {
-    router: NewrRouterStore;
+    router: NewRouterStore;
     register: RegisterStore;
 }
 
